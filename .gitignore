@@ -1,4 +1,7 @@
 /client
 /env
+/server/awaaztest/__pycache__
+/server/projects/__pycache__
+/server/projects/migration
 *.pyc
 *.sqlite3
