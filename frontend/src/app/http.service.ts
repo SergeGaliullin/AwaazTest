@@ -4,8 +4,8 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class HttpService {
-  projects_url: string = 'http://localhost:8000/api/projects/';
-  tasks_url: string = 'http://localhost:8000/api/project/'
+  projects_url: string = 'http://sergeigaliullin.pythonanywhere.com//api/projects/';
+  tasks_url: string = 'http://sergeigaliullin.pythonanywhere.com/api/project/'
  
 
   constructor(private http: Http) {  }
