@@ -1,4 +1,6 @@
-/client
+/client/dist
+/client/node_modules
+
 /env
 /server/awaaztest/__pycache__
 /server/projects/__pycache__
@@ -6,5 +8,6 @@
 /server/static
 /server/static_deployed
 /server/projects/migrations
+
 *.pyc
 *.sqlite3

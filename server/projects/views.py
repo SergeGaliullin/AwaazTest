@@ -4,14 +4,17 @@ from rest_framework import mixins
 from .serializers import ProjectSerializer, TaskSerializer, TaskListSerializer
 from .models import Project, Task
 
+
 class ProjectsViewSet(viewsets.ModelViewSet):
     serializer_class = ProjectSerializer
     queryset = Project.objects.all()
+
 
 class TaskViewSet(mixins.CreateModelMixin, mixins.DestroyModelMixin,
                      mixins.UpdateModelMixin, viewsets.GenericViewSet):
     serializer_class = TaskSerializer
     queryset = Task.objects.all()
+
 
 class TaskList(mixins.ListModelMixin, viewsets.GenericViewSet):
     serializer_class = TaskListSerializer

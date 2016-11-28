@@ -13,6 +13,7 @@ class TaskSerializer(serializers.ModelSerializer):
         model = Task
         fields = ('project', 'name', 'description', 'start_date', 'end_date', )
 
+
 class TaskListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
