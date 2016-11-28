@@ -8,7 +8,7 @@ class ProjectSerializer(serializers.ModelSerializer):
 
 
 class TaskSerializer(serializers.ModelSerializer):
-    project = serializers.PrimaryKeyRelatedField(source='project', queryset=Project.objects.all())
+    project = serializers.PrimaryKeyRelatedField(queryset=Project.objects.all())
     class Meta:
         model = Task
         fields = ('project', 'name', 'description', 'start_date', 'end_date', )
