@@ -5,6 +5,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class HttpService {
   projects_url: string = 'http://localhost:8000/api/projects/';
+  tasks_url: string = 'http://localhost:8000/api/project/'
  
 
   constructor(private http: Http) {  }
@@ -19,6 +20,11 @@ export class HttpService {
 
   getProject(id: string) {    
     return this.http.get(this.projects_url + id)
+    .map((response: any ) => response.json()) ;        
+  }
+
+  getTasks(id: string) {    
+    return this.http.get(this.tasks_url + id + '/tasks/')
     .map((response: any ) => response.json()) ;        
   }
 }
