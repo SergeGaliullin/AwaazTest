@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework import mixins
-from .serializers import ProjectSerializer, TaskSerializer
+from .serializers import ProjectSerializer, TaskSerializer, TaskListSerializer
 from .models import Project, Task
 
 class ProjectsViewSet(viewsets.ModelViewSet):
@@ -14,7 +14,7 @@ class TaskViewSet(mixins.CreateModelMixin, mixins.DestroyModelMixin,
     queryset = Task.objects.all()
 
 class TaskList(mixins.ListModelMixin, viewsets.GenericViewSet):
-    serializer_class = TaskSerializer
+    serializer_class = TaskListSerializer
 
     def get_queryset(self):
         id = self.kwargs['project_id']
