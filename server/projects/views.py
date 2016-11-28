@@ -5,6 +5,10 @@ from .serializers import ProjectSerializer, TaskSerializer
 from .models import Project, Task
 
 
+def home_page(request):
+    return render(request, 'index.html')
+
+
 class ProjectsViewSet(viewsets.ModelViewSet):
     serializer_class = ProjectSerializer
     queryset = Project.objects.all()

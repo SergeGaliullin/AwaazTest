@@ -2,9 +2,10 @@ from django.conf.urls import url
 from rest_framework.routers import DefaultRouter
 
 from .views import ProjectsViewSet, TaskList, TaskViewSet
+from .views import home_page
 
 urlpatterns = [
-    
+    url(r'^$', home_page, name='home_page'),    
 ]
 
 router = DefaultRouter()
