@@ -10,3 +10,13 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+class Task(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.TextField()
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
+
+    def __str__(self):
+        return self.name
+
