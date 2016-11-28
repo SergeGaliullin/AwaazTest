@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { NewProjectComponent } from './new-project/new-project.component';
 
+import { HttpService } from './http.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,7 @@ import { NewProjectComponent } from './new-project/new-project.component';
       { path: 'new-project', component: NewProjectComponent }           
     ])
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

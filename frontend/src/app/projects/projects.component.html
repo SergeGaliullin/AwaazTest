@@ -6,8 +6,8 @@
                 <h1>PROJECTS</h1>
      
             <ul>
-                <li>
-                    <a href="">Project one</a>
+                <li *ngFor="let project of projects">
+                    <a href="">{{ project.name }}</a>
                     <a href=""><span class="glyphicon glyphicon-remove"></span></a>
                     <a href=""><span class="glyphicon glyphicon-edit"></span></a>
                 </li>
