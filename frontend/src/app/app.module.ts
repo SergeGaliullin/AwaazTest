@@ -6,18 +6,21 @@ import { RouterModule }   from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { NewProjectComponent } from './new-project/new-project.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    NewProjectComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
         RouterModule.forRoot([      
-      { path: '', component: ProjectsComponent }           
+      { path: '', component: ProjectsComponent },
+      { path: 'new-project', component: NewProjectComponent }           
     ])
   ],
   providers: [],
