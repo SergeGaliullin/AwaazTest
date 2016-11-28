@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from .serializers import ProjectSerializer, TaskSerializer
-from .models import Project
+from .models import Project, Task
 
 class ProjectsViewSet(viewsets.GenericViewSet):
     serializer_class = ProjectSerializer
