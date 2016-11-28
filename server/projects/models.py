@@ -12,6 +12,7 @@ class Project(models.Model):
         return self.name
 
 class Task(models.Model):
+    project = models.ForeignKey(Project)
     name = models.CharField(max_length=50)
     description = models.TextField()
     start_date = models.DateTimeField()
