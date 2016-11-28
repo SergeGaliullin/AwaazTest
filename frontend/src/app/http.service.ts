@@ -17,7 +17,7 @@ export class HttpService {
     .map((response: Response ) => response.json() );
   }
 
-  getPost(id: string) {    
+  getProject(id: string) {    
     return this.http.get(this.projects_url + id)
     .map((response: any ) => response.json()) ;        
   }

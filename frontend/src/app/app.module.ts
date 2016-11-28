@@ -9,20 +9,23 @@ import { ProjectsComponent } from './projects/projects.component';
 import { NewProjectComponent } from './new-project/new-project.component';
 
 import { HttpService } from './http.service';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectsComponent,
-    NewProjectComponent
+    NewProjectComponent,
+    ProjectDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-        RouterModule.forRoot([      
+    RouterModule.forRoot([      
       { path: '', component: ProjectsComponent },
-      { path: 'new-project', component: NewProjectComponent }           
+      { path: 'new-project', component: NewProjectComponent },
+      { path: 'project/:id', component: ProjectDetailsComponent }
     ])
   ],
   providers: [HttpService],
