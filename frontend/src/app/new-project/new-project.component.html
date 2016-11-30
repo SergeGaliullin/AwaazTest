@@ -5,41 +5,41 @@
                 
 
                 <nav class="breadcrumb">
-                    <a class="breadcrumb-item" href="#">Main page /</a>
+                    <a class="breadcrumb-item" [routerLink]="['']">Main page</a> /
                     <span class="breadcrumb-item active" style="color:white">New project</span>
                 </nav>
              
              
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label">Name of the new project</label>
+                        <label class="col-sm-3 control-label">Name of the new project*</label>
                         <div class="col-sm-9">
-                            <input type="name" class="form-control" id="inputEmail3" placeholder="Add name">
+                            <input type="name" class="form-control" placeholder="Add name">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label">Insert image</label>
-                        <div class="col-sm-9">
-                            <input type="name" class="form-control" id="inputEmail3" placeholder="Choose a JPEG image file">
+                        <label class="col-sm-3 control-label">Insert image*</label>
+                        <div class="col-sm-9">                           
+                            <input type="file" accept="image/*" class="form-control" placeholder="Choose a JPEG image file">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label">Description</label>
+                        <label class="col-sm-3 control-label">Description*</label>
                         <div class="col-sm-9">
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control" rows="3" placeholder="Describe the project"></textarea>
                         </div>
                       
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label">Duration</label>
+                        <label class="col-sm-3 control-label">Duration*</label>
                         <div class="col-sm-3">
-                            <p class="form-control" rows="3"><strong>From: </strong>28 Nov 2016
-                                <a href=""><span class="glyphicon glyphicon-calendar"></span></a></p>
+                            <input type="name" class="form-control" placeholder="Duration">
+                           
                         </div>
-                        <div class="col-sm-3">
+                        <!--<div class="col-sm-3">
                             <p class="form-control" rows="3"><strong>To: </strong>
                                 <a href=""><span class="glyphicon glyphicon-calendar"></span></a></p>
-                        </div>
+                        </div>-->
 
                     </div>
                     <!--
@@ -75,6 +75,6 @@
             </div>
             <div class="row save">
                 <a [routerLink]="['']"><button type="button" class="btn btn-default btn-lg">CANCEL</button></a>
-                <button type="button" class="btn btn-success btn-lg">SAVE PROJECT</button>    
+                <button type="button" class="btn btn-success btn-lg">SAVE</button>    
             </div> 
         </div>

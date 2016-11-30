@@ -18,12 +18,17 @@ export class ProjectsComponent implements OnInit {
 
   constructor(private httpService: HttpService) {  }
 
-    ngOnInit() {
-      this.httpService.getProjectList().subscribe(
+  delete(project: number) {
+    this.httpService.removeProject(this.projects[project].id.toString());
+    this.projects.splice(project, 1);    
+  }
+
+  ngOnInit() {
+    this.httpService.getProjectList().subscribe(
         data => {
           this.projects = data;
-      }
-    );
+    }
+  );
 
 
   }
