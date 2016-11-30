@@ -1,7 +1,7 @@
 <div class="container">
             <div class="col-xs-12 col-md-12">
                              
-                <h1>PROJECT PAGE</h1>
+                <h1>CREATE NEW PROJECT</h1>
                 
 
                 <nav class="breadcrumb">
@@ -10,31 +10,69 @@
                 </nav>
              
              
-                <form class="form-horizontal">
+                <form class="form-horizontal" (ngSubmit)="onSubmit(f)" #f="ngForm">
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Name of the new project*</label>
                         <div class="col-sm-9">
-                            <input type="name" class="form-control" placeholder="Add name">
+                            <input type="name" class="form-control" placeholder="Add name" name="nome"
+                                required
+                                [(ngModel)]="project_data.name"
+                                #name="ngModel"
+                                minlength="3">
+                            <div *ngIf="name.touched && name.errors">
+                                <div *ngIf="name.errors.required" class="alert alert-danger">
+                                    Give project a name !
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Insert image*</label>
-                        <div class="col-sm-9">                           
-                            <input type="file" accept="image/*" class="form-control" placeholder="Choose a JPEG image file">
+                        <label class="col-sm-3 control-label">Upload avatar*</label>
+                        <div class="col-sm-9">                                                      
+                            <input #imageInput="ngModel"
+                                    type="file"
+                                    name="imageInput"
+                                    accept="image/*"
+                                    class="form-control"
+                                    placeholder="Choose a JPEG image file"
+                                    required
+                                    [(ngModel)]="project_data.image"
+                                    >
+                            <p *ngIf="imageInput.touched && imageInput.invalid" class="alert alert-danger">
+                            Select avatar !
+                            </p> 
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Description*</label>
                         <div class="col-sm-9">
-                            <textarea class="form-control" rows="3" placeholder="Describe the project"></textarea>
+                            <textarea 
+                                class="form-control" 
+                                rows="3"
+                                name="description" 
+                                placeholder="Describe the project" 
+                                required
+                                [(ngModel)]="project_data.description"
+                                #description="ngModel"></textarea>
+                            <p *ngIf="description.touched && description.invalid" class="alert alert-danger">
+                            Describe the project!
+                            </p>    
                         </div>
                       
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Duration*</label>
                         <div class="col-sm-3">
-                            <input type="name" class="form-control" placeholder="Duration">
-                           
+                            <input type="name"
+                                 class="form-control" 
+                                 placeholder="Set duration"
+                                 name="duration" 
+                                 required
+                                 [(ngModel)]="project_data.duration"
+                                 #duration="ngModel">          
+                            <p *ngIf="duration.touched && duration.invalid" class="alert alert-danger">
+                                Set duration !
+                            </p>                           
                         </div>
                         <!--<div class="col-sm-3">
                             <p class="form-control" rows="3"><strong>To: </strong>
@@ -75,6 +113,6 @@
             </div>
             <div class="row save">
                 <a [routerLink]="['']"><button type="button" class="btn btn-default btn-lg">CANCEL</button></a>
-                <button type="button" class="btn btn-success btn-lg">SAVE</button>    
+                <button type="button" class="btn btn-success btn-lg" [disabled]="f.invalid" (click)="saveProject()">SAVE</button>    
             </div> 
         </div>

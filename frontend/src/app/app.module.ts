@@ -21,7 +21,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpModule,    
     RouterModule.forRoot([      
       { path: '', component: ProjectsComponent },
       { path: 'new-project', component: NewProjectComponent },

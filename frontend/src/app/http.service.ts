@@ -36,4 +36,13 @@ export class HttpService {
     return this.http.get(this.tasks_url + id + '/tasks/')
     .map((response: any ) => response.json()) ;        
   }
+
+  upload(fileToUpload: any) {
+    let input = new FormData();
+    input.append("file", fileToUpload);
+
+    console.log("got here");
+    return this.http
+        .post("/api/uploadFile", input);
+  }
 }
