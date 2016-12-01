@@ -4,8 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule }   from '@angular/router';
 
-import { CalendarModule }  from 'primeng/primeng';
-
 import { AppComponent } from './app.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { NewProjectComponent } from './new-project/new-project.component';
@@ -24,8 +22,7 @@ import { NewTaskComponent } from './new-task/new-task.component';
     TasksComponent,
     NewTaskComponent,    
   ],
-  imports: [
-    CalendarModule,
+  imports: [    
     BrowserModule,
     FormsModule,
     HttpModule,    

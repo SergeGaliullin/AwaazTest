@@ -46,14 +46,5 @@ export class HttpService {
     })
     .map((data: Response) => data.status);
   }
-  
 
-  upload(fileToUpload: any) {
-    let input = new FormData();
-    input.append("file", fileToUpload);
-
-    console.log("got here");
-    return this.http
-        .post("/api/uploadFile", input);
-  }
 }

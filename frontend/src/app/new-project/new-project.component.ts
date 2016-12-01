@@ -19,16 +19,6 @@ export class NewProjectComponent {
   constructor(private httpService: HttpService) { }  
 
   saveProject(): void {
-    console.log(this.project_data);
-    let fi = this.imageInput.nativeElement;
-    if (fi.files && fi.files[0]) {
-        let fileToUpload = fi.files[0];
-        this.httpService.upload(fileToUpload)
-            .subscribe(res => {
-                console.log(res);
-            });
+    console.log(this.project_data);    
     }
-}
-
-
 }
