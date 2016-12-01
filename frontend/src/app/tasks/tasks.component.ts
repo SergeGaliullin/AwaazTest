@@ -16,7 +16,7 @@ export class Task {
 })
 export class TasksComponent implements OnInit {
   tasks: Task[];
-  @Input() id: string;
+  @Input() id: string;  
 
   constructor(private httpService: HttpService) { }
 

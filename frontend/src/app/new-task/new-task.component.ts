@@ -2,15 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { NgForm } from '@angular/forms';
 
-export class Task {  
-  name: string;
-  start_date: string;  
-  end_date: string;
-  description: string;
-  project: string;
-  id: string;
-}
-
 @Component({
   selector: 'app-new-task',
   templateUrl: './new-task.component.html'
@@ -30,7 +21,8 @@ export class NewTaskComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(form: NgForm) {    
+  onSubmit(form: NgForm) {
+    this.task.project = "1";    
     this.httpService.postTask(this.task).subscribe(
       data => console.log(data)
     );

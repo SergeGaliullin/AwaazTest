@@ -18,6 +18,7 @@ export class Project {
 export class ProjectDetailsComponent implements OnInit {
   id: string;
   project: Project;
+  project_id: string;
   
 
   constructor(private httpService: HttpService, private aR: ActivatedRoute) {
