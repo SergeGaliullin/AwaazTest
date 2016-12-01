@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../http.service';
+import { TasksComponent } from '../tasks/tasks.component';
 
 export class Project {  
   name: string;
@@ -10,15 +11,6 @@ export class Project {
   id: number;
 }
 
-export class Task {  
-  name: string;
-  end_date: Date;  
-  start_date: Date;
-  description: string;
-  id: number;
-}
-
-
 @Component({
   selector: 'app-project-details',
   templateUrl: './project-details.component.html'
@@ -26,7 +18,7 @@ export class Task {
 export class ProjectDetailsComponent implements OnInit {
   id: string;
   project: Project;
-  tasks: Task[];
+  
 
   constructor(private httpService: HttpService, private aR: ActivatedRoute) {
     this.id = aR.snapshot.params['id'];
@@ -37,13 +29,7 @@ export class ProjectDetailsComponent implements OnInit {
       data => {        
         this.project = data;        
       }
-    );
-
-    this.httpService.getTasks(this.id).subscribe(
-      data => {        
-        this.tasks = data;        
-      }
-    );
+    );    
   }
 
 }
