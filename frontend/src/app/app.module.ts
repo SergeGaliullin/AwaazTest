@@ -11,6 +11,7 @@ import { NewProjectComponent } from './new-project/new-project.component';
 import { HttpService } from './http.service';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { NewTaskComponent } from './new-task/new-task.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TasksComponent } from './tasks/tasks.component';
     ProjectsComponent,
     NewProjectComponent,
     ProjectDetailsComponent,
-    TasksComponent
+    TasksComponent,
+    NewTaskComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { TasksComponent } from './tasks/tasks.component';
     RouterModule.forRoot([      
       { path: '', component: ProjectsComponent },
       { path: 'new-project', component: NewProjectComponent },
-      { path: 'project/:id', component: ProjectDetailsComponent }
+      { path: 'project/:id', component: ProjectDetailsComponent },
+      { path: 'project/:id/new-task', component: NewTaskComponent }
     ])
   ],
   providers: [HttpService],
