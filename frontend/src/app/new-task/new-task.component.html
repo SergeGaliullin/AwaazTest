@@ -1,3 +1,66 @@
-<p>
-  new-task works!
-</p>
+<div class="container">
+    <div class="col-xs-12 col-md-12">
+        <h1>CREATE NEW TASK</h1>
+            <nav class="breadcrumb">
+                <a class="breadcrumb-item" [routerLink]="['']">Main page</a>/
+                <a class="breadcrumb-item" href="#"></a>
+                <span class="breadcrumb-item active" style="color:white">New task</span>
+            </nav>
+
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="name" class="col-sm-3 control-label">Name*</label>
+                <div class="col-sm-9">
+                    <input type="name" class="form-control" placeholder="Add name" name="name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description" class="col-sm-3 control-label">Description*</label>
+                <div class="col-sm-9">
+                    <textarea class="form-control" rows="3" placeholder="Describe the task"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="duration" class="col-sm-3 control-label">Duration</label>
+                <div class="col-sm-3">
+                    
+                    <input type="name" class="form-control" placeholder="Start date" name="start_date">
+                        
+                </div>
+                <div class="col-sm-3">
+                    <input type="name" class="form-control" placeholder="End date" name="end_date">
+                        <!--<p-calendar></p-calendar>-->
+                </div>
+
+            </div>
+            
+            <!--<div class="col-xs-12 col-md-8 col-md-offset-3">
+                <h2>Subtasks</h2>
+                <ul class="task">
+                    <li>
+                        <a href="">Subtask one</a>
+                        <a href=""><span class="glyphicon glyphicon-remove"></span></a>
+                    </li>
+
+                    <li>
+                        <a href="">Subask two</a>
+                        <a href=""><span class="glyphicon glyphicon-remove"></span></a>
+                    </li>
+                    <li>
+                        <a href="">Subask three</a>
+                        <a href=""><span class="glyphicon glyphicon-remove"></span></a>
+
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-success">Add new subtask</button>
+            </div>-->
+            
+        </form>
+
+      </div>
+    <div class="row save">
+        <button [routerLink]="['']" type="button" class="btn btn-default btn-lg">CANCEL</button>
+        <button type="button" class="btn btn-success btn-lg">SAVE TASK</button>    
+    </div> 
+
+</div>
