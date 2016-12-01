@@ -37,6 +37,17 @@ export class HttpService {
     .map((response: any ) => response.json()) ;        
   }
 
+  postTask(task: any) {    
+    const body = JSON.stringify(task);
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(this.tasks_url + task.project + '/tasks/', body, {
+      headers: headers
+    })
+    .map((data: Response) => data.status);
+  }
+  
+
   upload(fileToUpload: any) {
     let input = new FormData();
     input.append("file", fileToUpload);

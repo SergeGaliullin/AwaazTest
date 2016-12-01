@@ -7,28 +7,68 @@
                 <span class="breadcrumb-item active" style="color:white">New task</span>
             </nav>
 
-        <form class="form-horizontal">
+        <form class="form-horizontal" (ngSubmit)="onSubmit(f)" #f="ngForm">
             <div class="form-group">
                 <label for="name" class="col-sm-3 control-label">Name*</label>
                 <div class="col-sm-9">
-                    <input type="name" class="form-control" placeholder="Add name" name="name">
+                    <input type="name"
+                           class="form-control"
+                           name="name"
+                           placeholder="Add name"                           
+                           required
+                           [(ngModel)]="task.name"
+                           #name="ngModel"
+                           minlength="3">
+                           <div *ngIf="name.touched && name.errors">
+                            <div *ngIf="name.errors.required" class="alert alert-danger">
+                              Add name !
+                            </div>
+                          </div>
                 </div>
             </div>
             <div class="form-group">
                 <label for="description" class="col-sm-3 control-label">Description*</label>
                 <div class="col-sm-9">
-                    <textarea class="form-control" rows="3" placeholder="Describe the task"></textarea>
+                    <textarea class="form-control"
+                              rows="3"
+                              name="description" 
+                              placeholder="Describe the task"
+                              required
+                              [(ngModel)]="task.description"
+                              #description="ngModel">
+                    </textarea>
+                    <p *ngIf="description.touched && description.invalid" class="alert alert-danger">
+                      Write task description !
+                    </p>
                 </div>
             </div>
             <div class="form-group">
-                <label for="duration" class="col-sm-3 control-label">Duration</label>
+                <label for="duration" class="col-sm-3 control-label">Duration*</label>
                 <div class="col-sm-3">
                     
-                    <input type="name" class="form-control" placeholder="Start date" name="start_date">
+                    <input type="name"
+                     class="form-control"
+                     name="start_date"
+                     placeholder="Start date"
+                     required
+                     [(ngModel)]="task.start_date"
+                     #start_date="ngModel">
+                     <p *ngIf="start_date.touched && start_date.invalid" class="alert alert-danger">
+                      Write start date !
+                    </p>
                         
                 </div>
                 <div class="col-sm-3">
-                    <input type="name" class="form-control" placeholder="End date" name="end_date">
+                    <input type="name"
+                     class="form-control"
+                     name="end_date"
+                     placeholder="End date"
+                     required
+                     [(ngModel)]="task.end_date"
+                     #end_date="ngModel">
+                     <p *ngIf="end_date.touched && end_date.invalid" class="alert alert-danger">
+                      Write end date !
+                    </p>
                         <!--<p-calendar></p-calendar>-->
                 </div>
 
@@ -54,13 +94,14 @@
                 </ul>
                 <button type="button" class="btn btn-success">Add new subtask</button>
             </div>-->
+            <div class="row save">
+              <button [routerLink]="['']" type="button" class="btn btn-default btn-lg">CANCEL</button>
+              <button type="submit" class="btn btn-success btn-lg" [disabled]="f.invalid">SAVE TASK</button>    
+          </div> 
             
         </form>
 
       </div>
-    <div class="row save">
-        <button [routerLink]="['']" type="button" class="btn btn-default btn-lg">CANCEL</button>
-        <button type="button" class="btn btn-success btn-lg">SAVE TASK</button>    
-    </div> 
+    
 
 </div>

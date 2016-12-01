@@ -6,6 +6,7 @@ export class Task {
   end_date: Date;  
   start_date: Date;
   description: string;
+  project: string;
   id: number;
 }
 
