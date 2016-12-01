@@ -10,13 +10,15 @@ import { NewProjectComponent } from './new-project/new-project.component';
 
 import { HttpService } from './http.service';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { TasksComponent } from './tasks/tasks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectsComponent,
     NewProjectComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,
